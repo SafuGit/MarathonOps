@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+@import 'tailwindcss';
+@plugin 'daisyui' {
+  themes: ['JoggersTheme'];
+}
+
+@theme {
+  --font-doHyeon: 'Do Hyeon', sans-serif;
+}
+
+@plugin "daisyui/theme" {
+  name: "JoggersTheme";
+  default: true;
+  color-scheme: "light";
+
+  /* Backgrounds */
+  --color-base-100: oklch(96% 0.03 150);  /* soft mint */
+  --color-base-200: oklch(91% 0.035 150); /* light mint */
+  --color-base-300: oklch(85% 0.04 150);  /* pastel mint */
+  --color-base-content: oklch(18% 0.05 150); /* dark greenish text */
+
+  /* Primary = buttons (dark green) */
+  --color-primary: oklch(20% 0.05 150);
+  --color-primary-content: oklch(98% 0 0); /* white */
+
+  /* Secondary = nav / accents */
+  --color-secondary: oklch(40% 0.07 150);
+  --color-secondary-content: oklch(98% 0.02 120);
+
+  /* Accent = highlights */
+  --color-accent: oklch(70% 0.1 120);
+  --color-accent-content: oklch(15% 0.03 150);
+
+  /* Feedback colors */
+  --color-success: oklch(64% 0.2 131); 
+  --color-success-content: oklch(100% 0 0);
+  --color-warning: oklch(55% 0.15 90); 
+  --color-warning-content: oklch(10% 0 0);
+  --color-error: oklch(35% 0.1 40);    
+  --color-error-content: oklch(98% 0.01 10);
+
+  /* UI Shape and Depth */
+  --radius-box: 1.5rem;
+  --radius-btn: 9999px;
+  --radius-badge: 1.5rem;
+  --border: 1px;
+  --depth: 0.5;
+  --noise: 0.25;
+}
