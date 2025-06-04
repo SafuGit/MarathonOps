@@ -1,0 +1,9 @@
+.active {
+  background-color: #BEF2C6;
+  color: black;
+  text-decoration: underline;
+}
+
+#navLinks {
+  color: #545454;
+}

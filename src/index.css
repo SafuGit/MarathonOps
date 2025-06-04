@@ -27,6 +27,11 @@
   --color-secondary: oklch(40% 0.07 150);
   --color-secondary-content: oklch(98% 0.02 120);
 
+  
+  /* Info = BLUE */
+  --color-info: oklch(60% 0.15 250); /* bright clean blue */
+  --color-info-content: oklch(98% 0 0); /* white text */
+
   /* Accent = highlights */
   --color-accent: oklch(70% 0.1 120);
   --color-accent-content: oklch(15% 0.03 150);
