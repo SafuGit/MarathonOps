@@ -11,8 +11,8 @@ const Navbar = () => {
         </div>
         <div className='bg-[#E4F6E7] rounded-full text-lg p-1 border border-gray-400' id='navLinks'>
           <div className='flex gap-4 items-center'>
-            <NavLink to={'/'} className={'p-2 rounded-full'}>Home</NavLink>
-            <NavLink to={'/marathons'}>Marathons</NavLink>
+            <NavLink to={'/'} className={'p-2 rounded-full hover:bg-[#BEF2C6]'}>Home</NavLink>
+            <NavLink to={'/marathons'} className={'p-2 rounded-full hover:bg-[#BEF2C6]'}>Marathons</NavLink>
           </div>
         </div>
       </div>
