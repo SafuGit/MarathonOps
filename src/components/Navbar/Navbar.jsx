@@ -16,7 +16,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className='flex gap-1'>
+      <div className='flex gap-1 items-center'>
         <button className='btn btn-primary rounded-full font-normal text-xl'>Login</button>
         <button className='btn btn-info rounded-full font-normal text-xl'>Register</button>
       </div>

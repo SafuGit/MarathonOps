@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="footer footer-horizontal footer-center bg-primary text-primary-content p-10">
       <aside>
         <p className="text-xl font-extralight mb-0">
-          Marathon Hub ltd. <br />
+          MarathonOps ltd. <br />
           <span className='text-gray-300 text-lg font-extralight'>
             Connecting you with the Best Runners since 2025.
           </span>
