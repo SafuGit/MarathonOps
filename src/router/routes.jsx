@@ -5,6 +5,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Dashboard from "../components/Dashboard/Dashboard";
 import PrivateRoute from "../layouts/PrivateRoute";
+import AddMarathon from "../components/Dashboard/AddMarathon/AddMarathon";
 
 export const routes = createBrowserRouter([
   {path: '/', Component: Root, children: [
@@ -15,7 +16,10 @@ export const routes = createBrowserRouter([
       path: '/dashboard', 
       element: <PrivateRoute>
           <Dashboard></Dashboard>
-        </PrivateRoute>
+        </PrivateRoute>,
+      children: [
+        {index: true, Component: AddMarathon},
+      ]
     }
   ]}
 ])
