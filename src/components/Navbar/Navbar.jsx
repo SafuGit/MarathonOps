@@ -2,20 +2,40 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../contexts/AuthContext";
+import { BiExit } from "react-icons/bi";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          title: "Successfully Logged Out!",
+          icon: "success",
+        })
+      }).catch((error) => {
+        Swal.fire({
+          title: "Logout Failed!",
+          text: error.message,
+          icon: "error",
+        });
+      })
+  }
+
   return (
     <div className="flex p-4 justify-between">
       <div className="flex items-center">
         <div className="rounded-full bg-[#BEF2C6] text-xl text-black p-3 italic border border-gray-400 font-medium">
+          {/* <img src="" alt="" /> */}
           <h1>MarathonOps</h1>
         </div>
         <div
           className="bg-[#E4F6E7] rounded-full text-lg p-1 border border-gray-400"
           id="navLinks"
         >
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-1 items-center">
             <NavLink to={"/"} className={"p-2 rounded-full hover:bg-[#BEF2C6]"}>
               Home
             </NavLink>
@@ -25,11 +45,17 @@ const Navbar = () => {
             >
               Marathons
             </NavLink>
+            { user && (
+              <NavLink to={'/dashboard'} className={'p-2 rounded-full hover:bg-[#BEF2C6]'}>Dashboard</NavLink>
+            )}
           </div>
         </div>
       </div>
       {user ? (
-        ""
+        <div className="flex gap-1 items-center flex-row-reverse">
+          <img src={user.photoURL} className="w-12 rounded-full" alt="" referrerPolicy="no-referrer" />
+          <button className="btn btn-error rounded-full font-extralight text-lg" onClick={handleLogOut}>LogOut</button>
+        </div>
       ) : (
         <div className="flex gap-1 items-center">
           <Link
