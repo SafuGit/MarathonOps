@@ -7,10 +7,16 @@ const AddMarathon = () => {
   const [startRegistrationDate, setStartRegistrationDate] = useState(new Date());
   const handleStartRegistrationDate = (date) => {
     setStartRegistrationDate(date);
-    console.log(startRegistrationDate);
   }
   const [endRegistrationDate, setEndRegistrationDate] = useState(new Date());
+  const handleEndRegistrationDate = (date) => {
+    setEndRegistrationDate(date);
+  }
+
   const [marathonDate, setMarathonDate] = useState(new Date());
+  const handleMarathonDate = (date) => {
+    setMarathonDate(date);
+  }
 
   return (
     <div className='w-full flex flex-col items-cente'>
@@ -37,6 +43,22 @@ const AddMarathon = () => {
                 className='select rounded-lg'
                 selected={startRegistrationDate}
                 onChange={(date) => handleStartRegistrationDate(date)}
+              ></DatePicker>
+            </div>
+            <div className='flex flex-col w-full'>
+              <label className='label'>End Registration Date</label>
+              <DatePicker
+                className='select rounded-lg'
+                selected={endRegistrationDate}
+                onChange={(date) => handleEndRegistrationDate(date)}
+              ></DatePicker>
+            </div>
+            <div className='flex flex-col w-full'>
+              <label className='label'>Marathon Date</label>
+              <DatePicker
+                className='select rounded-lg'
+                selected={marathonDate}
+                onChange={(date) => handleMarathonDate(date)}
               ></DatePicker>
             </div>
           </div>
