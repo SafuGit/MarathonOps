@@ -44,18 +44,29 @@ const AddMarathon = () => {
     axios.post('http://localhost:3000/marathons', data)
       .then(response => {
         if (response.status === 201) {
-          alert('Marathon added successfully!');
+          Swal.fire({
+            title: 'Success!',
+            text: 'Marathon added successfully.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
           form.reset();
-          navigate('');
 
           setStartRegistrationDate(new Date());
           setEndRegistrationDate(new Date());
           setMarathonDate(new Date());
+
+          navigate('');
         }
       })
       .catch(error => {
         console.error("There was an error adding the marathon!", error);
-        alert('Failed to add marathon. Please try again.');
+        Swal.fire({
+          title: 'Error!',
+          text: 'There was an error adding the marathon.',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       });
   }
 

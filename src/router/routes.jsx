@@ -7,6 +7,8 @@ import Dashboard from "../components/Dashboard/Dashboard";
 import PrivateRoute from "../layouts/PrivateRoute";
 import AddMarathon from "../components/Dashboard/AddMarathon/AddMarathon";
 import Marathons from "../components/Marathons/Marathons";
+import Loading from "../components/Loading/Loading";
+import MarathonDetail from "../components/MarathonDetails/MarathonDetail";
 
 export const routes = createBrowserRouter([
   {path: '/', Component: Root, children: [
@@ -17,6 +19,13 @@ export const routes = createBrowserRouter([
       path: '/marathons', 
       Component: Marathons,
       loader: () => fetch('http://localhost:3000/marathons'),
+      hydrateFallbackElement: <Loading></Loading>
+    },
+    {
+      path: '/marathon/:id',
+      Component: MarathonDetail,
+      loader: ({params}) => fetch(`http://localhost:3000/marathons/${params.id}`),
+      hydrateFallbackElement: <Loading></Loading>
     },
     {
       path: '/dashboard', 
