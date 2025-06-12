@@ -5,6 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { AuthContext } from '../../../contexts/AuthContext';
+import dayjs from 'dayjs';
+import Swal from 'sweetalert2';
 
 const AddMarathon = () => {
   const navigate = useNavigate();
@@ -30,13 +32,13 @@ const AddMarathon = () => {
     const data = {
       marathonTitle: form.marathonTitle.value,
       runningDistance: form.runningDistance.value,
-      startRegistrationDate: startRegistrationDate.toISOString(),
-      endRegistrationDate: endRegistrationDate.toISOString(),
-      marathonDate: marathonDate.toISOString(),
+      startRegistrationDate: dayjs(startRegistrationDate).format('DD/MM/YYYY'),
+      endRegistrationDate: dayjs(endRegistrationDate).format('DD/MM/YYYY'),
+      marathonDate: dayjs(marathonDate).format('DD/MM/YYYY'),
       location: form.location.value,
       description: form.description.value,
       marathonImage: form.marathonImage.value,
-      createdAt: new Date().toISOString(),
+      createdAt: dayjs().format('DD/MM/YYYY'),
       registrationCount: 0,
       registeredUsers: [],
       createdBy: user.email,

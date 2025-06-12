@@ -10,7 +10,7 @@ const MarathonCard = ({data}) => {
 
 	return (
 		<div className='rounded-3xl bg-base-200 border border-gray-400'>
-			<img src={data.marathonImage} className='rounded-t-3xl w-90' alt="" />
+			<img src={data.marathonImage} className='rounded-t-3xl w-full h-38 object-cover' alt="" />
 			<div className='px-6'>
 				<div className='bg-[#BEF2C6] border border-gray-300 rounded-b-3xl mb-4 p-4'>
 					<h2 className='text-2xl text-center'>{data.marathonTitle}</h2>
@@ -21,7 +21,7 @@ const MarathonCard = ({data}) => {
 					</div>
 					<div className='flex gap-1 items-center mt-2'>
 						<BiCalendar></BiCalendar>
-						<p>{marathonDate} <span className='text-gray-600'>(YYYY/MM/DD)</span></p>
+						<p>{marathonDate} <span className='text-gray-600'>(DD/MM/YYYY)</span></p>
 					</div>
 					<div className='flex gap-2 items-center mt-2'>
 						{/* <BsClock></BsClock> */}
