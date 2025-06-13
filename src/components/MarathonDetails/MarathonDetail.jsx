@@ -1,15 +1,16 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import { Link, useLoaderData } from 'react-router';
+import TimeLeft from '../TimeLeft/TimeLeft';
+
+export const parseDate = (dateStr) => {
+		const [day, month, year] = dateStr.split('/');
+		return dayjs(`${year}-${month}-${day}`)
+}
 
 const MarathonDetail = () => {
 	const data = useLoaderData();
 	const [marathonDate, marathonTime] = data.marathonDate.split('T');
-
-	const parseDate = (dateStr) => {
-		const [day, month, year] = dateStr.split('/');
-		return dayjs(`${year}-${month}-${day}`)
-	}
 
 	const dates = {
 		currentDate: dayjs(),
@@ -23,8 +24,9 @@ const MarathonDetail = () => {
 
 	return (
 		<div className='w-[80vw] mx-auto my-10 bg-base-300 rounded-3xl'>
-			<div>
-				<img src={data.marathonImage} className='rounded-t-3xl w-full' alt="" />
+			<div className='relative'>
+				<img src={data.marathonImage} className='rounded-t-3xl w-full opacity-50' alt="" />
+				<TimeLeft endDate={data.endRegistrationDate}></TimeLeft>
 			</div>
 			<div className='p-4'>
 				<h1 className='text-3xl mt-2 font-extralight'>{data.marathonTitle}</h1>
