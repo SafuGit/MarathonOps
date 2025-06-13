@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 
 const MarathonDetail = () => {
 	const data = useLoaderData();
@@ -46,7 +46,7 @@ const MarathonDetail = () => {
 				<p>{data.description}</p>
 				{isRegistrationOpen ? (
 					<div className='mt-4'>
-						<button className='btn bg-yellow-600 w-full font-extralight rounded-full'>Register Now!</button>
+						<Link className='btn bg-yellow-600 w-full font-extralight rounded-full' to={`/marathonRegister/${data._id}`}>Register Now!</Link>
 					</div>
 				) : <div className='bg-red-400 p-2 rounded-3xl mt-4 text-center'>
 						<p className='text-xl'>Registration is Closed!</p>
