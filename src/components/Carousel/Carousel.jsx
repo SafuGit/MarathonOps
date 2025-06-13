@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 const bannerSlides = [
   {
     eventHighlights: "Join the New Dhaka Marathon and experience the thrill of the city run!",
-    imageUrl: "https://www.thefinancialpostbd.com/2025/02/08/fp_1739007677.jpg"
+    imageUrl: "https://www.thefinancialpostbd.com/2025/02/08/fp_1739007677.jpg?width=1093&height=613"
   },
   {
     eventHighlights: "Register by June 27th to secure your spot in the biggest run of the year!",
@@ -29,15 +29,27 @@ const Carousel = () => {
 		autoplay: true,
 	}
 	return (
-		<div className='w-[80vw] mx-auto bg-base-200 rounded-xl'>
-			 <Slider {...settings}>
-				{bannerSlides.map((slide, index) => (
-					<div className='' key={index}>
-						<img src={slide.imageUrl} alt="" className='rounded-xl' />
-					</div>
-				))}
-			 </Slider>
-		</div>
+		<>
+			<div className='w-[90vw] mx-auto rounded-xl mt-20 mb-20'>
+				<h1 className='text-6xl mb-4'>HIGHLIGHTED EVENTS</h1>
+				<Slider {...settings}>
+					{bannerSlides.map((slide, index) => (
+						<div className='' key={index}>
+							<div className='min-h-screen flex justify-center items-end p-8 opacity-80 rounded-xl' style={{
+								backgroundImage: `url(${slide.imageUrl})`,
+								backgroundSize: 'cover',
+								backgroundPosition: 'center',
+							}}>
+								<div className='bg-black p-6 rounded-full'>
+									<h1 className='text-2xl text-white mb-2'>{slide.eventHighlights}</h1>
+									<button className='btn btn-info rounded-full'>Learn More</button>
+								</div>
+							</div>
+						</div>
+					))}
+				</Slider>
+			</div>
+		</>
 	);
 };
 
