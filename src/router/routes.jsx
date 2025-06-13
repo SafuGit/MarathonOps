@@ -11,6 +11,7 @@ import Loading from "../components/Loading/Loading";
 import MarathonDetail from "../components/MarathonDetails/MarathonDetail";
 import MarathonRegister from "../components/MarathonRegister/MarathonRegister";
 import MyMarathons from "../components/Dashboard/MyMarathons/MyMarathons";
+import NotFound from "../components/NotFound/NotFound";
 
 export const routes = createBrowserRouter([
   {path: '/', Component: Root, children: [
@@ -55,6 +56,10 @@ export const routes = createBrowserRouter([
           hydrateFallbackElement: <Loading></Loading>
         }
       ]
+    },
+    {
+      path: '*',
+      Component: NotFound,
     }
-  ]}
+  ],}
 ])
