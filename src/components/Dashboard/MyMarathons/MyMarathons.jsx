@@ -1,19 +1,61 @@
 import React, { useEffect, useState } from 'react';
 import { BiEdit } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import MarathonEditForm from './MarathonEditForm';
+import axios from 'axios';
 
 const MyMarathons = () => {
 	const data = useLoaderData();
 	const [formSubmitted, setFormSubmitted] = useState(false);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (formSubmitted) {
 			document.getElementById('editModal').close();
 		}
 	}, [formSubmitted])
+
+	const handleDelete = (marathonId) => {
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You wont be able to undo this.",
+			icon: 'warning',
+			showCancelButton: true,
+			showConfirmButton: true,
+			confirmButtonText: 'Yes, Delete it.',
+			cancelButtonText: 'No, Cancel it.',
+		}).then((result) => {
+			if (result.isConfirmed) {
+				axios.delete(`http://localhost:3000/marathons/${marathonId}`)
+					.then(response => {
+						if (response.status === 200) {
+							Swal.fire({
+								title: 'Deleted!',
+								text: 'Marathon deleted successfully.',
+								icon: 'success',
+							}).then(() => {
+								navigate('');
+							})
+						} else {
+							Swal.fire({
+								title: 'Error!',
+								text: 'Failed to delete marathon.',
+								icon: 'error',
+							});
+						}
+					}).catch(error => {
+						console.error('Error deleting marathon:', error);
+						Swal.fire({
+							title: 'Error!',
+							text: 'An error occurred while deleting the marathon.',
+							icon: 'error',
+						});
+					});
+			}
+		})
+	}
 
 	return (
 		<>
@@ -52,7 +94,7 @@ const MyMarathons = () => {
 												<MarathonEditForm marathon={marathon} formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}></MarathonEditForm>
 											</div>
 										</dialog>
-										<button className='btn btn-sm bg-red-600 rounded-full font-extralight text-xl'>
+										<button className='btn btn-sm bg-red-600 rounded-full font-extralight text-xl' onClick={() => handleDelete(marathon._id)}>
 											<MdDelete></MdDelete>
 										</button>
 									</div>
