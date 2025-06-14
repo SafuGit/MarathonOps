@@ -52,7 +52,9 @@ export const routes = createBrowserRouter([
         {
           path: '/dashboard/myMarathons/:email',
           Component: MyMarathons,
-          loader: ({params}) => fetch(`http://localhost:3000/marathons/user/${params.email}`),
+          loader: ({params}) => fetch(`http://localhost:3000/marathons/user/${params.email}`, {
+            credentials: 'include'
+          }),
           hydrateFallbackElement: <Loading></Loading>
         }
       ]

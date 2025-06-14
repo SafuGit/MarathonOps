@@ -93,6 +93,9 @@ const MyMarathons = () => {
 												<div className='divider divider-vertical mt-0'></div>
 												<MarathonEditForm marathon={marathon} formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}></MarathonEditForm>
 											</div>
+											<form method="dialog" className="modal-backdrop">
+												<button>close</button>
+											</form>
 										</dialog>
 										<button className='btn btn-sm bg-red-600 rounded-full font-extralight text-xl' onClick={() => handleDelete(marathon._id)}>
 											<MdDelete></MdDelete>

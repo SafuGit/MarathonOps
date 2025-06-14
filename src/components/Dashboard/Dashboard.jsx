@@ -1,15 +1,18 @@
 import React, { use } from 'react';
-import { Link, Outlet } from 'react-router';
+import { Link, Outlet, useNavigation } from 'react-router';
 import { AuthContext } from '../../contexts/AuthContext';
+import Loading from '../Loading/Loading';
 
 const Dashboard = () => {
   const {user} = use(AuthContext);
+  const navigation = useNavigation();
+
   return (
     <div className="drawer drawer-open mt-2 mb-20">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
       <div className="drawer-content p-4">
-        <Outlet />
+        {navigation.state === 'loading' ? <Loading></Loading> : <Outlet></Outlet>}
       </div>
 
       <div className="drawer-side">

@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
-import { Outlet, useLocation } from 'react-router';
+import { Outlet, useLocation, useNavigation } from 'react-router';
 import Footer from '../components/Footer/Footer';
+import Loading from '../components/Loading/Loading';
 
 const Root = () => {
   const location = useLocation();
+  const navigation = useNavigation();
 
   const titles = {
     '/': 'Home - MarathonOps',
@@ -21,7 +23,7 @@ const Root = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Outlet></Outlet>
+      {navigation.state === 'loading' ? <Loading></Loading> : <Outlet></Outlet>}
       <Footer></Footer>
     </div>
   );
