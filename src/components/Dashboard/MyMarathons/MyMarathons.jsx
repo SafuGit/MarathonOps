@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { BiEdit } from 'react-icons/bi';
+import { MdDelete } from 'react-icons/md';
 import { useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
+import MarathonEditForm from './MarathonEditForm';
 
 const MyMarathons = () => {
 	const data = useLoaderData();
-	console.log(data);
+	const [formSubmitted, setFormSubmitted] = useState(false);
+
+	useEffect(() => {
+		if (formSubmitted) {
+			document.getElementById('editModal').close();
+		}
+	}, [formSubmitted])
+
 	return (
 		<>
 			<h1 className='text-3xl mb-2'>My Marathons</h1>
@@ -26,7 +37,26 @@ const MyMarathons = () => {
 								<td>{marathon.marathonTitle}</td>
 								<td>{marathon.location}</td>
 								<td>{marathon.marathonDate}</td>
-								<td></td>
+								<td>
+									<div className='flex'>
+										<button className='btn btn-sm text-xl bg-yellow-600 rounded-full font-extralight mr-2' onClick={() => document.getElementById('editModal').showModal()}>
+											<BiEdit></BiEdit>
+										</button>
+										<dialog id='editModal' className='modal'>
+											<div className='modal-box'>
+												<form method='dialog'>
+													<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+												</form>
+												<h1 className='text-3xl'>Edit Marathon</h1>
+												<div className='divider divider-vertical mt-0'></div>
+												<MarathonEditForm marathon={marathon} formSubmitted={formSubmitted} setFormSubmitted={setFormSubmitted}></MarathonEditForm>
+											</div>
+										</dialog>
+										<button className='btn btn-sm bg-red-600 rounded-full font-extralight text-xl'>
+											<MdDelete></MdDelete>
+										</button>
+									</div>
+								</td>
 							</tr>
 						))}
 					</tbody>
