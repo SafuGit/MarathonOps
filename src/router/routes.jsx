@@ -15,7 +15,12 @@ import NotFound from "../components/NotFound/NotFound";
 
 export const routes = createBrowserRouter([
   {path: '/', Component: Root, children: [
-    {index: true, Component: Home},
+    {
+      index: true, 
+      Component: Home,
+      loader: () => fetch('http://localhost:3000/marathons/limit/6'),
+      hydrateFallbackElement: <Loading></Loading>
+    },
     {path: '/login', Component: Login},
     {path: '/register', Component: Register},
     {
@@ -28,9 +33,7 @@ export const routes = createBrowserRouter([
     },
     {
       path: '/marathon/:id',
-      element: <PrivateRoute>
-        <MarathonDetail></MarathonDetail>
-      </PrivateRoute>,
+      element: <MarathonDetail></MarathonDetail>,
       loader: ({params}) => fetch(`http://localhost:3000/marathons/${params.id}`),
       hydrateFallbackElement: <Loading></Loading>
     },
