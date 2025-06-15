@@ -17,6 +17,9 @@ const AuthProvider = ({children}) => {
 
   const logOut = () => {
     setLoading(true);
+    axios.post('http://localhost:3000/deleteJwt', {}, {
+      withCredentials: true,
+    });
     return signOut(auth);
   }
 

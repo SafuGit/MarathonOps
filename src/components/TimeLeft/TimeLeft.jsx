@@ -36,7 +36,7 @@ export default function TimeLeft({endDate}) {
   const daysDuration = days * daySeconds;
 
   return (
-    <div className="flex items-center gap-4 absolute inset-x-0 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex-wrap md:flex-nowrap w-fit bg-black p-4 rounded-full opacity-90">
+    <div className="flex items-center gap-4 absolute inset-x-0 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-fit bg-black p-4 rounded-full opacity-90">
       <CountdownCircleTimer
         {...timerProps}
         colors="#7E2E84"
