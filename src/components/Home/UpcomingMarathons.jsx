@@ -6,7 +6,7 @@ import { BiCalendar } from 'react-icons/bi';
 const UpcomingMarathons = ({dataPromise}) => {
 	const data = use(dataPromise);
 	return (
-		<div className='grid grid-cols-3 gap-8 w-[90vw] mx-auto mb-25'>
+		<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90vw] mx-auto mb-25'>
 			{data.map((marathon, index) => (
 				<div className='rounded-2xl shadow-md bg-base-300' key={index}>
 					<div>
@@ -23,7 +23,7 @@ const UpcomingMarathons = ({dataPromise}) => {
 							<BiCalendar className='text-xl'></BiCalendar>
 							<p className='text-gray-600'>{marathon.marathonDate}</p>
 						</div>
-						<button className='w-full bg-yellow-600 font-extralight p-2 rounded-full'>View Details</button>
+						<button className='btn w-full bg-yellow-600 font-extralight p-2 rounded-full'>View Details</button>
 					</div>
 				</div>
 			))}

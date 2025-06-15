@@ -21,9 +21,9 @@ const programs = [
 
 const OurPrograms = () => {
 	return (
-		<div className='flex justify-between w-[90vw] mx-auto mt-25 mb-15 gap-2'>
+		<div className='flex flex-col lg:flex-row justify-between w-[90vw] mx-auto mt-25 mb-15 gap-2'>
 			<motion.div
-				className="sticky top-32 h-fit self-start"
+				className="sticky top-32 h-fit self-start hidden lg:block"
 				initial={{ opacity: 0, y: 50 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6 }}
@@ -31,14 +31,14 @@ const OurPrograms = () => {
 				<h1 className='text-5xl mb-8'>OUR PROGRAMS & SERVICES</h1>
 				<button className="btn bg-yellow-500 rounded-full p-6 text-md text-green-950 hover:text-white hover:bg-green-950 z-10 relative">ALL SERVICES</button>
 			</motion.div>
-			<div className='flex flex-col gap-6 w-[70%]'>
+			<div className='flex flex-col gap-6 lg:w-[70%]'>
 				{programs.map((program, index) => (
 					<div key={index} className='p-8 rounded-4xl shadow-md' style={{
 						backgroundImage: `url('${program.imageUrl || "https://placehold.co/600x400"}')`,
 						backgroundSize: 'cover',
 						backgroundPosition: 'center',
 					}}>
-						<div className='w-[30%] bg-white p-5 rounded-4xl'>
+						<div className='lg:w-[30%] md:w-[50%] bg-white p-5 rounded-4xl'>
 							<h2 className='text-2xl font-semibold mb-2'>{program.title}</h2>
 							<p className='text-gray-700 text-sm'>{program.description}</p>
 							<button className='btn btn-ghost text-start p-0 font-light rounded-4xl'>LEARN MORE</button>

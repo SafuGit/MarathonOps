@@ -2,7 +2,7 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../contexts/AuthContext";
-import { BiExit } from "react-icons/bi";
+import { BiExit, BiMenu } from "react-icons/bi";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
           <h1>MarathonOps</h1>
         </div>
         <div
-          className="bg-[#E4F6E7] rounded-full text-lg p-1 border border-gray-400"
+          className="bg-[#E4F6E7] rounded-full text-lg p-1 border border-gray-400 hidden sm:block"
           id="navLinks"
         >
           <div className="flex gap-1 items-center">
@@ -49,6 +49,11 @@ const Navbar = () => {
               <NavLink to={'/dashboard'} className={'p-2 rounded-full hover:bg-[#BEF2C6]'}>Dashboard</NavLink>
             )}
           </div>
+        </div>
+        <div className="block sm:hidden">
+            <button className="btn btn-ghost text-3xl">
+              <BiMenu></BiMenu>
+            </button>
         </div>
       </div>
       {user ? (
