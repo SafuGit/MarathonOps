@@ -21,7 +21,7 @@ const programs = [
 
 const OurPrograms = () => {
 	return (
-		<div className='flex justify-between w-[90vw] mx-auto mt-15 mb-15 gap-2'>
+		<div className='flex justify-between w-[90vw] mx-auto mt-25 mb-15 gap-2'>
 			<motion.div
 				className="sticky top-32 h-fit self-start"
 				initial={{ opacity: 0, y: 50 }}

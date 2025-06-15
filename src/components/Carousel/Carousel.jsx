@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 const bannerSlides = [
   {
     eventHighlights: "Join the New Dhaka Marathon and experience the thrill of the city run!",
-    imageUrl: "https://www.thefinancialpostbd.com/2025/02/08/fp_1739007677.jpg?width=1093&height=613"
+    imageUrl: "https://cdn.britannica.com/93/253593-138-0DD5803B/History-of-the-marathon.jpg?w=800&h=450&c=crop"
   },
   {
     eventHighlights: "Register by June 27th to secure your spot in the biggest run of the year!",
