@@ -8,7 +8,7 @@ const Dashboard = () => {
   const navigation = useNavigation();
 
   return (
-    <div className="drawer drawer-open mt-2 mb-20">
+    <div className="drawer md:drawer-open mt-2 mb-20">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
       <div className="drawer-content p-4">

@@ -77,7 +77,7 @@ const AddMarathon = () => {
       <div className='w-[90%] rounded-2xl border-2 border-black' id='container'>
         <h1 className='text-3xl text-white text-center mt-4'>Add Marathon ✅</h1>
         <form onSubmit={handleSubmit}>
-          <div className='grid grid-cols-2 p-12 gap-4' id='formGrid'>
+          <div className='md:grid md:grid-cols-2 p-12 gap-4' id='formGrid'>
             <div className='flex flex-col w-full'>
               <label className='label'>Marathon Title</label>
               <input type="text" name='marathonTitle' placeholder='Marathon Title' className='input rounded-lg w-full' />
@@ -123,7 +123,7 @@ const AddMarathon = () => {
               <label className='label'>Marathon Description</label>
               <textarea name="description" placeholder='Description' className='input rounded-lg w-full'></textarea>
             </div>
-            <div className='flex flex-col w-full'>
+            <div className='flex flex-col w-full mb-8 md:mb-0'>
               <label className='label'>Marathon Image</label>
               <textarea type="text" name='marathonImage' className='input rounded-lg w-full' placeholder='Image URL'/>
             </div>
