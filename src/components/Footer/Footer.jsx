@@ -12,6 +12,23 @@ const Footer = () => {
         </p>
         <p className='font-extralight text-md'>Copyright © {new Date().getFullYear()} SAFWAN SADID - All right reserved</p>
       </aside>
+      <div className='flex'>
+        <nav className='flex flex-col text-gray-400'>
+          <h6 className="!text-white text-xl mb-1">Services</h6>
+          <a className="link link-hover">Branding</a>
+          <a className="link link-hover">Design</a>
+          <a className="link link-hover">Marketing</a>
+          <a className="link link-hover">Advertisement</a>
+        </nav>
+        <nav className='flex flex-col text-gray-400'>
+          <h6 className="!text-white text-xl mb-1">Company</h6>
+          <a className="link link-hover">About us</a>
+          <a className="link link-hover">Contact</a>
+          <a className="link link-hover">Jobs</a>
+          <a className="link link-hover">Press kit</a>
+        </nav>
+
+      </div>
       <nav>
         <div className="grid grid-flow-col gap-4">
           <a>

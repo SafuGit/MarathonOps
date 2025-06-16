@@ -89,7 +89,7 @@ const Navbar = () => {
         )}
       </div>
       <div
-        className="bg-[#E4F6E7] rounded-full text-lg p-1 border border-gray-400 hidden w-[95%] mx-auto mb-2"
+        className="bg-[#E4F2F6] rounded-full text-lg p-1 border border-gray-400 hidden w-[95%] mx-auto mb-2"
         id="navLinks2"
       >
         <div className="flex gap-1 items-center justify-center">
