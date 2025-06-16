@@ -21,6 +21,7 @@ const Dashboard = () => {
         <ul className="menu bg-base-200 text-base-content min-h-full w-60 p-4 rounded-3xl text-lg ml-4">
           <li><Link to={''}>Add Marathon</Link></li>
           <li><Link to={`myMarathons/${user.email}`}>My Marathons</Link></li>
+          <li><Link to={`myApplications/${user.email}`}>My Apply List</Link></li>
         </ul>
       </div>
     </div>

@@ -13,7 +13,9 @@ const MarathonRegister = () => {
 		const form = e.target;
 		const [ firstName, lastName, phoneNumber, email ] = [form.firstName, form.lastName, form.phoneNumber, form.email];
 		const registrationData = {
+      applicationId: crypto.randomUUID(),
 			marathonId: data._id,
+      marathonTitle: data.marathonTitle,
 			firstName: firstName.value,
 			lastName: lastName.value,
 			phoneNumber: phoneNumber.value,
