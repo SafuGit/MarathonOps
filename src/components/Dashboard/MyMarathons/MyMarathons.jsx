@@ -1,15 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { BiEdit, BiFilter, BiSort } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
-import { useLoaderData, useNavigate } from 'react-router';
+import { data, useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import MarathonEditForm from './MarathonEditForm';
 import axios from 'axios';
+import { AuthContext } from '../../../contexts/AuthContext';
+
+const sortMarathonByNew = (email) => { 
+  return fetch(`http://localhost:3000/marathonSort/newest/${email}`, {
+    credentials: 'include',
+  }).then(res => res.json())
+}
+
+const sortMarathonByOld = (email) => {
+  return fetch(`http://localhost:3000/marathonSort/oldest/${email}`, {
+    credentials: 'include',
+  }).then(res => res.json())
+}
 
 const MyMarathons = () => {
-	const data = useLoaderData();
+  const { user } = use(AuthContext);
 	const [formSubmitted, setFormSubmitted] = useState(false);
 	const navigate = useNavigate();
+
+  const [data, setData] = useState(useLoaderData());
+  const [newestMarathons, setNewestMarathons] = useState([]);
+  const [oldestMarathons, setOldestMarathons] = useState([]);
+  const [currentSort, setCurrentSort] = useState('newest');
+
+  const handleSortClick = () => {
+    if (currentSort === 'newest') {
+      setCurrentSort('oldest');
+      setData(oldestMarathons);
+    } else if (currentSort === 'oldest') {
+      setCurrentSort('newest');
+      setData(newestMarathons);
+    }
+  }
+
+  useEffect(() => {
+    if (user.email) {
+      sortMarathonByNew(user.email).then(data => {
+        setNewestMarathons(data);
+      })
+      sortMarathonByOld(user.email).then(data => {
+        setOldestMarathons(data);
+      })
+    }
+  }, [user]);
 
 	useEffect(() => {
 		if (formSubmitted) {
@@ -59,11 +98,12 @@ const MyMarathons = () => {
 
 	return (
 		<>
-			<div className='flex gap-3 items-start mb-2'>
-				<h1 className='text-3xl'>My Marathons</h1>
-				<button className='btn bg-yellow-600 rounded-full text-xl'>Sort <BiFilter></BiFilter> </button>
+			<div className='flex items-start mb-2'>
+				<h1 className='text-3xl mr-3'>My Marathons</h1>
+				<button onClick={handleSortClick} className='btn bg-yellow-600 rounded-full text-xl font-extralight'>Sort <BiFilter></BiFilter> </button>
+        <p className='ml-1'>({currentSort})</p>
 			</div>
-			<div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#BEF2C6]">
+			<div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#BEE6F2]">
 				<table className="table">
 					{/* head */}
 					<thead>
@@ -72,6 +112,7 @@ const MyMarathons = () => {
 							<th>Title</th>
 							<th>Location</th>
 							<th>Date</th>
+              <th>Created At</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
@@ -82,6 +123,7 @@ const MyMarathons = () => {
 								<td>{marathon.marathonTitle}</td>
 								<td>{marathon.location}</td>
 								<td>{marathon.marathonDate}</td>
+                <td>{marathon.createdAt}</td>
 								<td>
 									<div className='flex'>
 										<button className='btn btn-sm text-xl bg-yellow-600 rounded-full font-extralight mr-2' onClick={() => document.getElementById('editModal').showModal()}>
