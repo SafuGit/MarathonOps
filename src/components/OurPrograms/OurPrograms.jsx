@@ -31,6 +31,10 @@ const OurPrograms = () => {
 				<h1 className='text-5xl mb-8'>OUR PROGRAMS & SERVICES</h1>
 				<button className="btn bg-yellow-500 rounded-full p-6 text-md text-green-950 hover:text-white hover:bg-green-950 z-10 relative">ALL SERVICES</button>
 			</motion.div>
+			<div className='flex min-[500px]:flex-row flex-col gap-2 items-center lg:hidden mb-4 text-center'>
+				<h1 className='text-5xl mb-4'>OUR PROGRAMS & SERVICES</h1>
+				<button className="btn bg-yellow-500 rounded-full p-6 text-md text-green-950 hover:text-white hover:bg-green-950 z-10 relative">ALL SERVICES</button>
+			</div>
 			<div className='flex flex-col gap-6 lg:w-[70%]'>
 				{programs.map((program, index) => (
 					<div key={index} className='p-8 rounded-4xl shadow-md' style={{

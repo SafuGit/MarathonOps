@@ -72,7 +72,7 @@ const Navbar = () => {
             <button className="btn btn-error rounded-full font-extralight text-lg" onClick={handleLogOut}>LogOut</button>
           </div>
         ) : (
-          <div className="flex gap-1 items-center">
+          <div className="flex sm:flex-row flex-col gap-1 items-center">
             <Link
               to={"/login"}
               className="btn btn-primary rounded-full font-normal text-xl"
