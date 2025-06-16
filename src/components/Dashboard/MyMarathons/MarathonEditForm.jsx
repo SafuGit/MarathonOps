@@ -5,13 +5,15 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 const MarathonEditForm = ({marathon, formSubmitted, setFormSubmitted}) => {
-	const [startRegistrationDate, setStartRegistrationDate] = useState(new Date());
+  dayjs.extend(customParseFormat);
+	const [startRegistrationDate, setStartRegistrationDate] = useState(dayjs(marathon.startRegistrationDate, 'DD/MM/YYYY').toDate());
 	const handleStartRegistrationDate = (date) => {
 		setStartRegistrationDate(date);
 	}
-	const [endRegistrationDate, setEndRegistrationDate] = useState(new Date());
+	const [endRegistrationDate, setEndRegistrationDate] = useState(dayjs(marathon.endRegistrationDate, 'DD/MM/YYYY').toDate());
 	const handleEndRegistrationDate = (date) => {
 		setEndRegistrationDate(date);
 	}
@@ -75,7 +77,8 @@ const MarathonEditForm = ({marathon, formSubmitted, setFormSubmitted}) => {
 				</div>
 				<div className='flex flex-col'>
 					<label className='label'>Start Registration Date</label>
-					<DatePicker
+					<DatePicker 
+            dateFormat='dd/MM/yyyy'
 						className='select rounded-lg w-full'
 						selected={startRegistrationDate}
 						onChange={(date) => handleStartRegistrationDate(date)}
@@ -83,7 +86,8 @@ const MarathonEditForm = ({marathon, formSubmitted, setFormSubmitted}) => {
 				</div>
 				<div className='flex flex-col'>
 					<label className='label'>End Registration Date</label>
-					<DatePicker
+					<DatePicker 
+            dateFormat='dd/MM/yyyy'
 						className='select rounded-lg w-full'
 						selected={endRegistrationDate}
 						onChange={(date) => handleEndRegistrationDate(date)}
