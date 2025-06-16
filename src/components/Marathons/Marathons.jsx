@@ -3,8 +3,7 @@ import { useLoaderData } from 'react-router';
 import MarathonCard from './MarathonCard';
 
 const Marathons = () => {
-	const data = useLoaderData();
-	console.log(data);
+	let data = useLoaderData();
 	return (
 		<div className='w-full flex flex-col items-center justify-center my-10'>
 			<h1 className='text-4xl sm:text-5xl text-center font-bold'>MARATHON EVENTS COMING UP INCLUDE</h1>

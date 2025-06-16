@@ -75,13 +75,13 @@ const Navbar = () => {
           <div className="flex sm:flex-row flex-col gap-1 items-center">
             <Link
               to={"/login"}
-              className="btn btn-primary rounded-full font-normal text-xl"
+              className="btn btn-primary rounded-full font-normal sm:text-xl"
             >
               Login
             </Link>
             <Link
               to={"/register"}
-              className="btn btn-info rounded-full font-normal text-xl"
+              className="btn btn-info rounded-full font-normal sm:text-xl"
             >
               Register
             </Link>

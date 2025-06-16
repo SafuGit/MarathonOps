@@ -12,7 +12,7 @@ const Dashboard = () => {
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
       <div className="drawer-content p-4">
-        <label htmlFor="my-drawer-2" className="btn flex items-center justify-center bg-yellow-600 rounded-full mx-auto mb-4 drawer-button block md:hidden">Open drawer</label>
+        <label htmlFor="my-drawer-2" className="btn flex items-center justify-center bg-yellow-600 rounded-full mx-auto mb-4 drawer-button md:hidden">Open drawer</label>
         {navigation.state === 'loading' ? <Loading></Loading> : <Outlet></Outlet>}
       </div>
 

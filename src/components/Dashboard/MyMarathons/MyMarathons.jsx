@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BiEdit } from 'react-icons/bi';
+import { BiEdit, BiFilter, BiSort } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
 import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
@@ -59,7 +59,10 @@ const MyMarathons = () => {
 
 	return (
 		<>
-			<h1 className='text-3xl mb-2'>My Marathons</h1>
+			<div className='flex gap-3 items-start mb-2'>
+				<h1 className='text-3xl'>My Marathons</h1>
+				<button className='btn bg-yellow-600 rounded-full text-xl'>Sort <BiFilter></BiFilter> </button>
+			</div>
 			<div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#BEF2C6]">
 				<table className="table">
 					{/* head */}
