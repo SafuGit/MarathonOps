@@ -93,7 +93,8 @@ const AddMarathon = () => {
             </div>
             <div className='flex flex-col w-full'>
               <label className='label'>Start Registration Date</label>
-              <DatePicker
+              <DatePicker 
+                dateFormat='dd/MM/yyyy'
                 className='select rounded-lg w-full'
                 selected={startRegistrationDate}
                 onChange={(date) => handleStartRegistrationDate(date)}
@@ -101,7 +102,8 @@ const AddMarathon = () => {
             </div>
             <div className='flex flex-col w-full'>
               <label className='label'>End Registration Date</label>
-              <DatePicker
+              <DatePicker 
+                dateFormat='dd/MM/yyyy'
                 className='select rounded-lg w-full'
                 selected={endRegistrationDate}
                 onChange={(date) => handleEndRegistrationDate(date)}
@@ -109,7 +111,8 @@ const AddMarathon = () => {
             </div>
             <div className='flex flex-col w-full'>
               <label className='label'>Marathon Date</label>
-              <DatePicker
+              <DatePicker 
+                dateFormat='dd/MM/yyyy'
                 className='select rounded-lg w-full'
                 selected={marathonDate}
                 onChange={(date) => handleMarathonDate(date)}

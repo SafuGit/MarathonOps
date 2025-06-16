@@ -14,34 +14,33 @@
   color-scheme: "light";
 
   /* Backgrounds */
-  --color-base-100: oklch(96% 0.03 150);  /* soft mint */
-  --color-base-200: oklch(91% 0.035 150); /* light mint */
-  --color-base-300: oklch(85% 0.04 150);  /* pastel mint */
-  --color-base-content: oklch(18% 0.05 150); /* dark greenish text */
+  --color-base-100: oklch(96% 0.03 240);  /* soft powder blue */
+  --color-base-200: oklch(91% 0.035 240); /* light sky blue */
+  --color-base-300: oklch(85% 0.04 240);  /* pastel blue */
+  --color-base-content: oklch(18% 0.05 240); /* dark navy-like text */
 
-  /* Primary = buttons (dark green) */
-  --color-primary: oklch(20% 0.05 150);
+  /* Primary = buttons (dark blue) */
+  --color-primary: oklch(20% 0.05 240); /* navy blue */
   --color-primary-content: oklch(98% 0 0); /* white */
 
   /* Secondary = nav / accents */
-  --color-secondary: oklch(40% 0.07 150);
-  --color-secondary-content: oklch(98% 0.02 120);
+  --color-secondary: oklch(40% 0.07 240); /* denim blue */
+  --color-secondary-content: oklch(98% 0.02 240); /* off-white bluish */
 
-  
-  /* Info = BLUE */
-  --color-info: oklch(60% 0.15 250); /* bright clean blue */
+  /* Info = bright blue */
+  --color-info: oklch(60% 0.15 250); /* clean azure */
   --color-info-content: oklch(98% 0 0); /* white text */
 
   /* Accent = highlights */
-  --color-accent: oklch(70% 0.1 120);
-  --color-accent-content: oklch(15% 0.03 150);
+  --color-accent: oklch(70% 0.1 250); /* sky blue */
+  --color-accent-content: oklch(15% 0.03 240); /* muted navy */
 
   /* Feedback colors */
-  --color-success: oklch(64% 0.2 131); 
+  --color-success: oklch(64% 0.2 131);  /* same green success */
   --color-success-content: oklch(100% 0 0);
-  --color-warning: oklch(55% 0.15 90); 
+  --color-warning: oklch(55% 0.15 90);  /* same yellow warning */
   --color-warning-content: oklch(10% 0 0);
-  --color-error: oklch(35% 0.1 40);    
+  --color-error: oklch(35% 0.1 40);     /* same red error */
   --color-error-content: oklch(98% 0.01 10);
 
   /* UI Shape and Depth */
