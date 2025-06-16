@@ -12,7 +12,7 @@ const MarathonCard = ({data}) => {
 		<div className='rounded-3xl bg-base-200 border border-gray-400'>
 			<img src={data.marathonImage} className='rounded-t-3xl w-full h-38 object-cover' alt="" />
 			<div className='px-6'>
-				<div className='bg-[#BEF2C6] border border-gray-300 rounded-b-3xl mb-4 p-4'>
+				<div className='bg-[#BEE6F2] border border-gray-300 rounded-b-3xl mb-4 p-4'>
 					<h2 className='text-2xl text-center'>{data.marathonTitle}</h2>
 					<div className='divider divider-vertical mt-0 mb-1'></div>
 					<div className='flex items-center gap-1'>

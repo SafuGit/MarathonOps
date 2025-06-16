@@ -60,7 +60,7 @@ const MyMarathons = () => {
 	return (
 		<>
 			<h1 className='text-3xl mb-2'>My Marathons</h1>
-			<div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#BEF2C6]">
+			<div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#BEE6F2]">
 				<table className="table">
 					{/* head */}
 					<thead>
