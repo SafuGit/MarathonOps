@@ -53,7 +53,7 @@ const MyApplications = () => {
 			cancelButtonText: 'No, Cancel it.',
 		}).then((result) => {
 			if (result.isConfirmed) {
-				axios.delete(`http://localhost:3000/applications/${appId}`)
+				axios.delete(`https://marathon-ops-server.vercel.app/applications/${appId}`)
 					.then(response => {
 						if (response.status === 200) {
 							Swal.fire({

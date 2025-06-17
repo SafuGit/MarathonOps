@@ -8,13 +8,13 @@ import axios from 'axios';
 import { AuthContext } from '../../../contexts/AuthContext';
 
 const sortMarathonByNew = (email) => { 
-  return fetch(`http://localhost:3000/marathonSort/newest/${email}`, {
+  return fetch(`https://marathon-ops-server.vercel.app/marathonSort/newest/${email}`, {
     credentials: 'include',
   }).then(res => res.json())
 }
 
 const sortMarathonByOld = (email) => {
-  return fetch(`http://localhost:3000/marathonSort/oldest/${email}`, {
+  return fetch(`https://marathon-ops-server.vercel.app/marathonSort/oldest/${email}`, {
     credentials: 'include',
   }).then(res => res.json())
 }
@@ -73,7 +73,7 @@ const MyMarathons = () => {
 			cancelButtonText: 'No, Cancel it.',
 		}).then((result) => {
 			if (result.isConfirmed) {
-				axios.delete(`http://localhost:3000/marathons/${marathonId}`)
+				axios.delete(`https://marathon-ops-server.vercel.app/marathons/${marathonId}`)
 					.then(response => {
 						if (response.status === 200) {
 							Swal.fire({

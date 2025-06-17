@@ -22,7 +22,7 @@ const MarathonRegister = () => {
 			phoneNumber: phoneNumber.value,
 			email: email.value,
 		}
-		axios.put(`http://localhost:3000/marathons/apply/${data._id}`, registrationData)
+		axios.put(`https://marathon-ops-server.vercel.app/marathons/apply/${data._id}`, registrationData)
 			.then(res => {
 				Swal.fire({
 					icon: 'success',

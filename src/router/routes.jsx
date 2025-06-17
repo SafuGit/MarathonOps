@@ -20,7 +20,7 @@ export const routes = createBrowserRouter([
     {
       index: true, 
       Component: Home,
-      loader: () => fetch('http://localhost:3000/marathons/limit/6'),
+      loader: () => fetch('https://marathon-ops-server.vercel.app/marathons/limit/6'),
       hydrateFallbackElement: <Loading></Loading>
     },
     {path: '/login', Component: Login},
@@ -30,13 +30,13 @@ export const routes = createBrowserRouter([
       element: <PrivateRoute>
         <Marathons></Marathons>
       </PrivateRoute>,
-      loader: () => fetch('http://localhost:3000/marathons'),
+      loader: () => fetch('https://marathon-ops-server.vercel.app/marathons'),
       hydrateFallbackElement: <Loading></Loading>
     },
     {
       path: '/marathon/:id',
       element: <MarathonDetail></MarathonDetail>,
-      loader: ({params}) => fetch(`http://localhost:3000/marathons/${params.id}`),
+      loader: ({params}) => fetch(`https://marathon-ops-server.vercel.app/marathons/${params.id}`),
       hydrateFallbackElement: <Loading></Loading>
     },
     {
@@ -44,7 +44,7 @@ export const routes = createBrowserRouter([
       element: <PrivateRoute>
         <MarathonRegister></MarathonRegister>
       </PrivateRoute>,
-      loader: ({params}) => fetch(`http://localhost:3000/marathons/${params.id}`),
+      loader: ({params}) => fetch(`https://marathon-ops-server.vercel.app/marathons/${params.id}`),
       hydrateFallbackElement: <Loading></Loading>
     },
     {
@@ -57,7 +57,7 @@ export const routes = createBrowserRouter([
         {
           path: '/dashboard/myMarathons/:email',
           Component: MyMarathons,
-          loader: ({params}) => fetch(`http://localhost:3000/marathons/user/${params.email}`, {
+          loader: ({params}) => fetch(`https://marathon-ops-server.vercel.app/marathons/user/${params.email}`, {
             credentials: 'include'
           }),
           hydrateFallbackElement: <Loading></Loading>
@@ -65,7 +65,7 @@ export const routes = createBrowserRouter([
         {
           path: '/dashboard/myApplications/:email',
           Component: MyApplications,
-          loader: ({params}) => fetch(`http://localhost:3000/applications/${params.email}`, {
+          loader: ({params}) => fetch(`https://marathon-ops-server.vercel.app/applications/${params.email}`, {
             credentials: 'include',
           }),
           hydrateFallbackElement: <Loading></Loading>,

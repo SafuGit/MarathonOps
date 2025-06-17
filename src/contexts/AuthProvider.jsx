@@ -17,7 +17,7 @@ const AuthProvider = ({children}) => {
 
   const logOut = () => {
     setLoading(true);
-    axios.post('http://localhost:3000/deleteJwt', {}, {
+    axios.post('https://marathon-ops-server.vercel.app/deleteJwt', {}, {
       withCredentials: true,
     });
     return signOut(auth);
@@ -46,7 +46,7 @@ const AuthProvider = ({children}) => {
       setLoading(false);
       if (currentUser?.email) {
         const userData = { accessToken: currentUser.accessToken, email: currentUser.email };
-        axios.post('http://localhost:3000/jwt', userData, {
+        axios.post('https://marathon-ops-server.vercel.app/jwt', userData, {
           withCredentials: true,
         })
           .then(res => {

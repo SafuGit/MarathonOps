@@ -37,7 +37,7 @@ const MarathonEditForm = ({marathon, formSubmitted, setFormSubmitted}) => {
 			// createdBy: user.email,
 		}
 		setFormSubmitted(true);
-		axios.put(`http://localhost:3000/marathons/${marathon._id}`, data)
+		axios.put(`https://marathon-ops-server.vercel.app/marathons/${marathon._id}`, data)
 			.then(response => {
 				if (response.status === 200) {
 					console.log(response.data);

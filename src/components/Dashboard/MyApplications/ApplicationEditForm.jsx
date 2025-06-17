@@ -17,7 +17,7 @@ const ApplicationEditForm = ({data, setFormSubmitted}) => {
       email: email.value,
 		}
     setFormSubmitted(true);
-		axios.put(`http://localhost:3000/applications/${data.applicationId}`, registrationData)
+		axios.put(`https://marathon-ops-server.vercel.app/applications/${data.applicationId}`, registrationData)
 			.then(res => {
 				Swal.fire({
 					icon: 'success',

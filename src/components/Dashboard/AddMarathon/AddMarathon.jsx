@@ -43,7 +43,7 @@ const AddMarathon = () => {
       registeredUsers: [],
       createdBy: user.email,
     }
-    axios.post('http://localhost:3000/marathons', data)
+    axios.post('https://marathon-ops-server.vercel.app/marathons', data)
       .then(response => {
         if (response.status === 201) {
           Swal.fire({
