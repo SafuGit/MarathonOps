@@ -29,15 +29,29 @@ const MyMarathons = () => {
   const [oldestMarathons, setOldestMarathons] = useState([]);
   const [currentSort, setCurrentSort] = useState('newest');
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [oldestSortable, setOldestSortable] = useState(false);
+  const [newestSortable, setNewestSortable] = useState(false);
 
   const handleSortClick = () => {
     setButtonClicked(true);
-    if (currentSort === 'newest') {
+    if (oldestMarathons.length > 0 && currentSort === 'newest' && oldestSortable) {
       setCurrentSort('oldest');
       setData(oldestMarathons);
-    } else if (currentSort === 'oldest') {
+    } else if (newestMarathons.length > 0 && currentSort === 'oldest' && newestSortable) {
       setCurrentSort('newest');
       setData(newestMarathons);
+    } else {
+      Swal.fire({
+        toast: true,
+        text: 'Loading Data...'
+      })
+      if (newestSortable || oldestSortable) {
+        Swal.fire({
+          toast: true,
+          text: 'Data Loaded!',
+          icon: 'success',
+        })
+      }
     }
   }
 
@@ -45,9 +59,11 @@ const MyMarathons = () => {
     if (user.email) {
       sortMarathonByNew(user.email).then(data => {
         setNewestMarathons(data);
+        setNewestSortable(true);
       })
       sortMarathonByOld(user.email).then(data => {
         setOldestMarathons(data);
+        setOldestSortable(true);
       })
     }
   }, [user]);
