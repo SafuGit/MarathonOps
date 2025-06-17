@@ -1,11 +1,9 @@
 import React, { use } from 'react';
-import { AuthContext } from '../../../contexts/AuthContext';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
 
 const ApplicationEditForm = ({data, setFormSubmitted}) => {
-  const user = use(AuthContext);
   const navigate = useNavigate();
   console.log(data);
 
@@ -28,7 +26,7 @@ const ApplicationEditForm = ({data, setFormSubmitted}) => {
 					text: 'You have successfully updated application for the marathon!',
 				}).then(() => {
 					form.reset();
-          // navigate('');
+          navigate('');
 				});
 			})
 			.catch(err => {
@@ -54,7 +52,7 @@ const ApplicationEditForm = ({data, setFormSubmitted}) => {
 				</div>
 				<div className='flex justify-between items-center'>
 					<p className='text-xl'>Email</p>
-					<input readOnly disabled className='input rounded-3xl' type="text" placeholder='Email' defaultValue={user.email} name='email'/>
+					<input readOnly disabled className='input rounded-3xl' type="text" placeholder='Email' defaultValue={data.email} name='email'/>
 				</div>
 				<div className='flex justify-between items-center mb-2'>
 					<p className='text-xl'>Contact No.</p>

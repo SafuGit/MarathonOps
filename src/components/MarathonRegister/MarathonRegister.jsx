@@ -16,6 +16,7 @@ const MarathonRegister = () => {
       applicationId: crypto.randomUUID(),
 			marathonId: data._id,
       marathonTitle: data.marathonTitle,
+      marathonDate: data.marathonDate,
 			firstName: firstName.value,
 			lastName: lastName.value,
 			phoneNumber: phoneNumber.value,
