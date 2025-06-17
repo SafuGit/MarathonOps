@@ -1,13 +1,25 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiEdit } from 'react-icons/bi';
 import { MdDelete } from 'react-icons/md';
 import { useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import ApplicationEditForm from './ApplicationEditForm';
 
 const MyApplications = () => {
   const data = useLoaderData();
   const navigate = useNavigate();
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (formSubmitted) {
+      const openModal = document.querySelector('dialog[open]');
+      if (openModal) {
+        openModal.close();
+      }
+      setFormSubmitted(false);
+    }
+  }, [formSubmitted])
 
   const handleDeleteApplication = (appId) => {
     Swal.fire({
@@ -78,17 +90,17 @@ const MyApplications = () => {
                 <td>{app.email}</td>
                 <td>
 									<div className='flex'>
-										<button className='btn btn-sm text-xl bg-yellow-600 rounded-full font-extralight mr-2' onClick={() => document.getElementById('editModal').showModal()}>
+										<button className='btn btn-sm text-xl bg-yellow-600 rounded-full font-extralight mr-2' onClick={() => document.getElementById(`editModal-${index}`).showModal()}>
 											<BiEdit></BiEdit>
 										</button>
-										<dialog id='editModal' className='modal'>
+										<dialog id={`editModal-${index}`} className='modal'>
 											<div className='modal-box'>
 												<form method='dialog'>
 													<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
 												</form>
 												<h1 className='text-3xl'>Edit Application</h1>
 												<div className='divider divider-vertical mt-0'></div>
-												{/*TODO: put dialog form here */}
+												<ApplicationEditForm data={app} setFormSubmitted={setFormSubmitted}></ApplicationEditForm>
 											</div>
 											<form method="dialog" className="modal-backdrop">
 												<button>close</button>

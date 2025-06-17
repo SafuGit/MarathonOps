@@ -28,8 +28,10 @@ const MyMarathons = () => {
   const [newestMarathons, setNewestMarathons] = useState([]);
   const [oldestMarathons, setOldestMarathons] = useState([]);
   const [currentSort, setCurrentSort] = useState('newest');
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   const handleSortClick = () => {
+    setButtonClicked(true);
     if (currentSort === 'newest') {
       setCurrentSort('oldest');
       setData(oldestMarathons);
@@ -52,7 +54,11 @@ const MyMarathons = () => {
 
 	useEffect(() => {
 		if (formSubmitted) {
-			document.getElementById('editModal').close();
+			const openModal = document.querySelector('dialog[open]');
+      if (openModal) {
+        openModal.close();
+      }
+      setFormSubmitted(false);
 		}
 	}, [formSubmitted])
 
@@ -101,7 +107,7 @@ const MyMarathons = () => {
 			<div className='flex items-start mb-2'>
 				<h1 className='text-3xl mr-3'>My Marathons</h1>
 				<button onClick={handleSortClick} className='btn bg-yellow-600 rounded-full text-xl font-extralight'>Sort <BiFilter></BiFilter> </button>
-        <p className='ml-1'>({currentSort})</p>
+        <p className='ml-1'>{buttonClicked ? currentSort : ""}</p>
 			</div>
 			<div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#BEE6F2]">
 				<table className="table">
@@ -126,10 +132,10 @@ const MyMarathons = () => {
                 <td>{marathon.createdAt}</td>
 								<td>
 									<div className='flex'>
-										<button className='btn btn-sm text-xl bg-yellow-600 rounded-full font-extralight mr-2' onClick={() => document.getElementById('editModal').showModal()}>
+										<button className='btn btn-sm text-xl bg-yellow-600 rounded-full font-extralight mr-2' onClick={() => document.getElementById(`editModal-${index}`).showModal()}>
 											<BiEdit></BiEdit>
 										</button>
-										<dialog id='editModal' className='modal'>
+										<dialog id={`editModal-${index}`} className='modal'>
 											<div className='modal-box'>
 												<form method='dialog'>
 													<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
