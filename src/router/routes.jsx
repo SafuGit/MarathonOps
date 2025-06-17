@@ -60,7 +60,8 @@ export const routes = createBrowserRouter([
           loader: ({params}) => fetch(`https://marathon-ops-server.vercel.app/marathons/user/${params.email}`, {
             credentials: 'include'
           }),
-          hydrateFallbackElement: <Loading></Loading>
+          hydrateFallbackElement: <Loading></Loading>,
+          errorElement: <div className="w-full text-center"><h1 className="text-5xl">NO MARATHONS FOUND</h1></div>
         },
         {
           path: '/dashboard/myApplications/:email',
