@@ -13,6 +13,7 @@ import MarathonRegister from "../components/MarathonRegister/MarathonRegister";
 import MyMarathons from "../components/Dashboard/MyMarathons/MyMarathons";
 import NotFound from "../components/NotFound/NotFound";
 import MyApplications from "../components/Dashboard/MyApplications/MyApplications";
+import NoApplications from "../components/NoApplications/NoApplications";
 
 export const routes = createBrowserRouter([
   {path: '/', Component: Root, children: [
@@ -67,7 +68,8 @@ export const routes = createBrowserRouter([
           loader: ({params}) => fetch(`http://localhost:3000/applications/${params.email}`, {
             credentials: 'include',
           }),
-          hydrateFallbackElement: <Loading></Loading>
+          hydrateFallbackElement: <Loading></Loading>,
+          errorElement: <NoApplications></NoApplications>
         }
       ]
     },
