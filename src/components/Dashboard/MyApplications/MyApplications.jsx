@@ -7,9 +7,30 @@ import Swal from 'sweetalert2';
 import ApplicationEditForm from './ApplicationEditForm';
 
 const MyApplications = () => {
-  const data = useLoaderData();
+  const originalData = useLoaderData();
+  const [data, setData] = useState(originalData);
   const navigate = useNavigate();
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [query, setQuery] = useState('');
+
+  const handleSetQuery = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+  }
+
+  useEffect(() => {
+    if (query.trim() === '') {
+      setData(originalData);
+      return;
+    } else {
+      const filteredData = originalData.filter(app => {
+        if (app.marathonTitle) {
+          return app.marathonTitle.toLowerCase().includes(query.toLowerCase());
+        }
+      })
+      setData(filteredData);
+    }
+  }, [originalData, query])
 
   useEffect(() => {
     if (formSubmitted) {
@@ -65,6 +86,7 @@ const MyApplications = () => {
     <>
       <div className='w-full flex justify-between mb-2'>
         <h1 className='text-3xl'>My Apply List</h1>
+        <input type="text" className='input rounded-lg' placeholder='Search Applications...' onChange={handleSetQuery} />
       </div>
       <div className="overflow-x-auto rounded-box border border-base-content/5 bg-[#BEE6F2]">
 				<table className="table">

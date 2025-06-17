@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router';
 
 const ApplicationEditForm = ({data, setFormSubmitted}) => {
   const navigate = useNavigate();
-  console.log(data);
 
   const handleApplicationUpdate = (e) => {
 		e.preventDefault();
