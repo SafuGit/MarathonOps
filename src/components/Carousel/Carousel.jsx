@@ -31,7 +31,7 @@ const Carousel = () => {
 	return (
 		<>
 			<div className='w-[90vw] mx-auto rounded-xl mt-20 mb-20'>
-				<h1 className='text-6xl mb-4'>HIGHLIGHTED EVENTS</h1>
+				<h1 className='sm:text-6xl text-3xl mb-4'>HIGHLIGHTED EVENTS</h1>
 				<Slider {...settings}>
 					{bannerSlides.map((slide, index) => (
 						<div className='' key={index}>
