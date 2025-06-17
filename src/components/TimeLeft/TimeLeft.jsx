@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import { parseDate } from "../MarathonDetails/MarathonDetail";
 
@@ -7,11 +7,28 @@ const minuteSeconds = 60;
 const hourSeconds = 3600;
 const daySeconds = 86400;
 
-const timerProps = {
-  isPlaying: true,
-  size: 120,
-  strokeWidth: 6
-};
+const responsiveTimer = () => {
+  const windowWidth = window.innerWidth;
+  if (windowWidth >= 768) {
+    return {
+      isPlaying: true,
+      size: 120,
+      strokeWidth: 6
+    }
+  } else if (windowWidth >= 480 && windowWidth <= 768) {
+    return {
+      isPlaying: true,
+      size: 60,
+      strokeWidth: 1
+    }
+  } else if (windowWidth < 480) {
+    return {
+      isPlaying: true,
+      size: 40,
+      strokeWidth: 1
+    }
+  }
+}
 
 const renderTime = (dimension, time) => {
   return (
@@ -28,6 +45,16 @@ const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
 const getTimeDays = (time) => (time / daySeconds) | 0;
 
 export default function TimeLeft({endDate}) {
+  const [timerProps, setTimerProps] = useState(responsiveTimer());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setTimerProps(responsiveTimer());
+    }
+
+    window.addEventListener('resize', handleResize);
+  }, [])
+
   const stratTime = dayjs().unix(); // use UNIX timestamp in seconds
   const endTime = parseDate(endDate).unix(); // use UNIX timestamp in seconds
 
