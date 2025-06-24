@@ -11,6 +11,17 @@
 - https://marathon-ops.web.app/
 ## Description
 Welcome to the vibrant world of MarathonOps, a running club that not only embraces the thrill of the open road but also cultivates a tight-knit community of passionate runners.
+
+## TECH STACK
+Frontend: React, React-Router, DaisyUI, HTML-CSS
+Backend: NodeJS, Express, Firebase, JWT, MongoDB
+
+## How to Run/Deploy
+- Clone this github repository to your local machine.
+- Run "npm install" first to install all the packages.
+- Run "npm run dev" to run the app in development mode.
+- Run "npm run build" to build the app, The build will be in the dist folder. You can preview with "npm run preview".
+
 ## Packages Used
 
 ### FRONTEND
@@ -46,6 +57,9 @@ Welcome to the vibrant world of MarathonOps, a running club that not only embrac
 "jsonwebtoken": "^9.0.2",
 "mongodb": "^6.17.0"
 ```
+
+## Screenshot
+![image](https://github.com/user-attachments/assets/7385d87b-7561-41c5-971f-9d4138fcb2a7)
 
 # React + Vite
 
