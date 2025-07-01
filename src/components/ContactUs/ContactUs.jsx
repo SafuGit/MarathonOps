@@ -8,8 +8,8 @@ const ContactUs = () => {
     <div className='flex flex-col w-[90vw] mx-auto justify-center items-center mt-20 mb-20'>
       <h1 className='text-5xl'>Contact Us</h1>
       <p className='text-lg text-gray-400 mb-4'>Any questions or remarks? Just write to us.</p>
-      <div className='w-full flex bg-base-200 rounded-2xl'>
-        <div className='w-[40%] bg-base-300 p-8 rounded-l-2xl'>
+      <div className='w-full flex flex-col md:flex-row bg-base-200 rounded-2xl'>
+        <div className='md:w-[40%] bg-base-300 p-8 md:rounded-l-2xl rounded-t-2xl'>
           <h1 className='text-3xl'>Contact Information</h1>
           <p className='text- lg text-gray-500 mb-20'>Say something to start a live chat!</p>
           <div className='flex flex-col gap-4'>
@@ -27,7 +27,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className='w-[60%] p-8'>
+        <div className='md:w-[60%] p-8'>
           <h1 className='text-3xl mb-2'>About Us</h1>
           <p className='text-gray-600'>MarathonOps is dedicated to building a vibrant running community by connecting passionate runners with top-tier marathon events. Our mission is to make marathon participation smoother, smarter, and more accessible — whether you're a first-timer or a seasoned athlete. We believe in promoting fitness, discipline, and unity through well-organized, meaningful events that inspire people to go the distance — literally. Join us as we push boundaries and celebrate every runner's journey.</p>
         </div>

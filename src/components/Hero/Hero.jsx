@@ -17,7 +17,7 @@ const Hero = () => {
             Welcome to the vibrant world of MarathonOps, a running club that not only embraces the thrill of the open road but also cultivates a tight-knit community of passionate runners.
           </p>
           <Link to={'/register'} className="btn bg-yellow-500 rounded-full p-8 text-xl text-green-950 hover:text-white hover:bg-green-950 z-10 relative">JOIN OUR APP <BiArrowToRight></BiArrowToRight></Link>
-          <div className='flex justify-center'>
+          <div className='flex justify-center mt-8 sm:mt-0'>
             <div id="sd-container">
               <div class="arrow"></div>
               <div class="arrow"></div>

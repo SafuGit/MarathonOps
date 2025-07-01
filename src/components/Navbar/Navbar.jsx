@@ -103,10 +103,10 @@ const Navbar = () => {
         )}
       </div>
       <div
-        className="bg-[#E4F2F6] rounded-full text-lg p-1 border border-gray-400 hidden w-[95%] mx-auto mb-2 sticky top-[6.5rem] z-60"
+        className="bg-[#E4F2F6] rounded-2xl text-lg p-1 border border-gray-400 hidden w-[95%] mx-auto mb-2 sticky top-[6.5rem] z-60"
         id="navLinks2"
       >
-        <div className="flex gap-1 items-center justify-center">
+        <div className="flex flex-wrap gap-1 items-center justify-center-safe">
           <NavLink to={"/"} className={"p-2 rounded-full hover:bg-[#BEE6F2]"}>
             Home
           </NavLink>
@@ -116,6 +116,7 @@ const Navbar = () => {
           >
             Marathons
           </NavLink>
+          <NavLink to={"/contactUs"} className={'p-2 rounded-full hover:bg-[#BEE6F2]'}>Contact Us</NavLink>
           { user && (
             <NavLink to={'/dashboard'} className={'p-2 rounded-full hover:bg-[#BEE6F2]'}>Dashboard</NavLink>
           )}
