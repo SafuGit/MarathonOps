@@ -35,7 +35,7 @@ const Carousel = () => {
 				<Slider {...settings}>
 					{bannerSlides.map((slide, index) => (
 						<div className='' key={index}>
-							<div className='min-h-screen flex justify-center items-end p-8 opacity-80 rounded-xl' style={{
+							<div className='min-h-[70vh] flex justify-center items-end p-8 opacity-80 rounded-xl' style={{
 								backgroundImage: `url(${slide.imageUrl})`,
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',

@@ -13,7 +13,7 @@ const MarathonCard = ({data}) => {
 			<img src={data.marathonImage} className='rounded-t-3xl w-full h-38 object-cover' alt="" />
 			<div className='px-6'>
 				<div className='bg-[#BEE6F2] border border-gray-300 rounded-b-3xl mb-4 p-4'>
-					<h2 className='text-2xl text-center'>{data.marathonTitle}</h2>
+					<h2 className='text-2xl text-center truncate'>{data.marathonTitle}</h2>
 					<div className='divider divider-vertical mt-0 mb-1'></div>
 					<div className='flex items-center gap-1'>
 						<FaLocationPin className='text-red-600'></FaLocationPin>
@@ -28,7 +28,7 @@ const MarathonCard = ({data}) => {
 						<p className='text-sm'>START: {startRegistrationDate}  <br /> END: {endRegistrationDate}</p>
 					</div>
 				</div>
-				<Link to={`/marathon/${data._id}`} className='btn bg-yellow-600 mb-4 w-full rounded-full font-extralight'>View Details</Link>
+				<Link to={`/marathon/${data._id}`} className='btn bg-yellow-600 mb-4 w-full rounded-full font-extralight mt-auto'>View Details</Link>
 			</div>
 		</div>
 	);
