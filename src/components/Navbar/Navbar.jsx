@@ -35,8 +35,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex p-4 justify-between">
-        <div className="flex flex-row-reverse sm:flex-row items-center">
+      <div className="flex p-4 justify-between sticky top-0 z-50 bg-base-200">
+        <div className="flex flex-row-reverse sm:flex-row items-center ml-[2.5vw]">
           <div className="rounded-full bg-[#BEE6F2] text-xl text-black p-3 italic border border-gray-400 font-medium">
             {/* <img src="" alt="" /> */}
             <h1>MarathonOps</h1>
@@ -67,12 +67,12 @@ const Navbar = () => {
           </div>
         </div>
         {user ? (
-          <div className="flex gap-1 items-center flex-row-reverse">
+          <div className="flex gap-1 items-center flex-row-reverse mr-[2.5vw]">
             <img src={user.photoURL} className="w-12 rounded-full" alt="" referrerPolicy="no-referrer" />
             <button className="btn btn-error rounded-full font-extralight text-lg" onClick={handleLogOut}>LogOut</button>
           </div>
         ) : (
-          <div className="flex sm:flex-row flex-col gap-1 items-center">
+          <div className="flex sm:flex-row flex-col gap-1 items-center mr-[2.5vw]">
             <Link
               to={"/login"}
               className="btn btn-primary rounded-full font-normal sm:text-xl"
