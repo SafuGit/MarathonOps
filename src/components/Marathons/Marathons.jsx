@@ -22,7 +22,7 @@ const Marathons = () => {
         <h1 className='text-3xl sm:text-4xl font-bold'>MARATHON EVENTS COMING UP INCLUDE</h1>
         <details className="dropdown ">
           <summary className="btn btn-ghost btn-circle m-1"><BiSort className='text-3xl'></BiSort></summary>
-          <ul className="menu dropdown-content bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm">
+          <ul className="menu dropdown-content bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm absolute right-0">
             <li><a onClick={() => handleSort('asc')}>Sort A-Z</a></li>
             <li><a onClick={() => handleSort('desc')}>Sort Z-A</a></li>
           </ul>
