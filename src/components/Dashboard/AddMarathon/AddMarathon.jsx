@@ -73,7 +73,7 @@ const AddMarathon = () => {
   }
 
   return (
-    <div className='w-full flex flex-col items-cente'>
+    <div className='w-full flex flex-col items-center'>
       <div className='w-[90%] rounded-2xl border-2 border-black' id='container'>
         <h1 className='text-3xl text-white text-center mt-4'>Add Marathon ✅</h1>
         <form onSubmit={handleSubmit}>
