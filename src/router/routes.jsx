@@ -14,6 +14,7 @@ import MyMarathons from "../components/Dashboard/MyMarathons/MyMarathons";
 import NotFound from "../components/NotFound/NotFound";
 import MyApplications from "../components/Dashboard/MyApplications/MyApplications";
 import NoApplications from "../components/NoApplications/NoApplications";
+import ContactUs from "../components/ContactUs/ContactUs";
 
 export const routes = createBrowserRouter([
   {path: '/', Component: Root, children: [
@@ -48,6 +49,10 @@ export const routes = createBrowserRouter([
       hydrateFallbackElement: <Loading></Loading>
     },
     {
+      path: '/contactUs',
+      Component: ContactUs,
+    },
+    {
       path: '/dashboard', 
       element: <PrivateRoute>
           <Dashboard></Dashboard>
@@ -71,7 +76,7 @@ export const routes = createBrowserRouter([
           }),
           hydrateFallbackElement: <Loading></Loading>,
           errorElement: <NoApplications></NoApplications>
-        }
+        },
       ]
     },
     {

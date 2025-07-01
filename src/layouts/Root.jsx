@@ -8,20 +8,20 @@ const Root = () => {
   const location = useLocation();
   const navigation = useNavigation();
 
-  const titles = {
+  useEffect(() => {
+    const titles = {
     '/': 'Home - MarathonOps',
     '/login': 'Login - MarathonOps',
     '/register': 'Register - MarathonOps',
     '/marathons': 'Marathons - MarathonOps',
     '/dashboard': 'Dashboard - MarathonOps',
+    '/contactUs': 'Contact Us - MarathonOps',
   }
-
-  useEffect(() => {
     document.title = titles[location.pathname] || 'MarathonOps';
-  }, [location, titles])
+  }, [location])
 
   return (
-    <div>
+    <div className='min-h-[100vh] flex flex-col'>
       <Navbar></Navbar>
       {navigation.state === 'loading' ? <Loading></Loading> : <Outlet></Outlet>}
       <Footer></Footer>

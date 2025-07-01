@@ -55,6 +55,7 @@ const Navbar = () => {
               >
                 Marathons
               </NavLink>
+              <NavLink to={"/contactUs"} className={'p-2 rounded-full hover:bg-[#BEE6F2]'}>Contact Us</NavLink>
               { user && (
                 <NavLink to={'/dashboard'} className={'p-2 rounded-full hover:bg-[#BEE6F2]'}>Dashboard</NavLink>
               )}
