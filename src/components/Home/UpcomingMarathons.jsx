@@ -23,7 +23,7 @@ const UpcomingMarathons = ({dataPromise}) => {
 							<BiCalendar className='text-xl'></BiCalendar>
 							<p className='text-gray-600'>{marathon.marathonDate}</p>
 						</div>
-						<button className='btn w-full bg-yellow-600 font-extralight p-2 rounded-full'>View Details</button>
+						{/* <button className='btn w-full bg-yellow-600 font-extralight p-2 rounded-full'>View Details</button> */}
 					</div>
 				</div>
 			))}

@@ -40,9 +40,9 @@ const Carousel = () => {
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 							}}>
-								<div className='bg-black p-6 lg:rounded-full rounded-3xl'>
+								<div className='bg-black p-4 items-center text-center lg:rounded-full rounded-3xl'>
 									<h1 className='text-2xl text-white mb-2'>{slide.eventHighlights}</h1>
-									<button className='btn btn-info rounded-full'>Learn More</button>
+									{/* <button className='btn btn-info rounded-full'>Learn More</button> */}
 								</div>
 							</div>
 						</div>

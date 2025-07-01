@@ -29,11 +29,11 @@ const OurPrograms = () => {
 				transition={{ duration: 0.6 }}
 			>
 				<h1 className='text-5xl mb-8'>OUR PROGRAMS & SERVICES</h1>
-				<button className="btn bg-yellow-500 rounded-full p-6 text-md text-green-950 hover:text-white hover:bg-green-950 z-10 relative">ALL SERVICES</button>
+				{/* <button className="btn bg-yellow-500 rounded-full p-6 text-md text-green-950 hover:text-white hover:bg-green-950 z-10 relative">ALL SERVICES</button> */}
 			</motion.div>
 			<div className='flex min-[500px]:flex-row flex-col gap-2 items-center lg:hidden mb-4 text-center'>
 				<h1 className='text-5xl mb-4'>OUR PROGRAMS & SERVICES</h1>
-				<button className="btn bg-yellow-500 rounded-full p-6 text-md text-green-950 hover:text-white hover:bg-green-950 z-10 relative">ALL SERVICES</button>
+				{/* <button className="btn bg-yellow-500 rounded-full p-6 text-md text-green-950 hover:text-white hover:bg-green-950 z-10 relative">ALL SERVICES</button> */}
 			</div>
 			<div className='flex flex-col gap-6 lg:w-[70%]'>
 				{programs.map((program, index) => (
@@ -45,7 +45,7 @@ const OurPrograms = () => {
 						<div className='lg:w-[30%] md:w-[50%] bg-white p-5 rounded-4xl'>
 							<h2 className='text-2xl font-semibold mb-2'>{program.title}</h2>
 							<p className='text-gray-700 text-sm'>{program.description}</p>
-							<button className='btn btn-ghost text-start p-0 font-light rounded-4xl'>LEARN MORE</button>
+							{/* <button className='btn btn-ghost text-start p-0 font-light rounded-4xl'>LEARN MORE</button> */}
 						</div>
 					</div>
 				))}
