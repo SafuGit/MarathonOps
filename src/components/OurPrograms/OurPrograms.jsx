@@ -10,7 +10,7 @@ const programs = [
   {
     title: "Strength Training",
     description: "Empower your body with structured workouts led by certified coaches.",
-		imageUrl: "https://www.insidefitnessmag.com/cdn/shop/articles/strength-training-techniques-for-beginners-812748.jpg?v=1717177372",
+		imageUrl: 'https://media.post.rvohealth.io/wp-content/uploads/2022/04/male-lifting-weight-732x549-thumbnail.jpg',
   },
   {
     title: "Mindful Mobility",
