@@ -29,7 +29,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="w-[90vw] mx-auto mt-20 mb-20">
+    <div className="w-[90vw] mx-auto mt-30 mb-20">
       <div className="text-center mb-10">
         <h2 className="sm:text-5xl text-3xl font-bold text-green-950">
           Upcoming Highlights

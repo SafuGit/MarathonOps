@@ -6,7 +6,7 @@ const UpcomingMarathons = ({ dataPromise }) => {
   const data = React.use(dataPromise);
 
   return (
-    <section className="w-[90vw] mx-auto my-20">
+    <section className="w-[90vw] mx-auto my-40">
       <h2 className="text-5xl font-bold text-center mb-12">
         Upcoming Marathons
       </h2>
