@@ -23,7 +23,7 @@ const ContactUs = () => {
             </div> */}
             <div className='flex gap-2 items-center'>
               <FaLocationPin className='text-2xl'></FaLocationPin>
-              <p className='text-lg'>Dhaka, Bangladesh</p>
+              <p className='text-lg'>Global</p>
             </div>
           </div>
         </div>

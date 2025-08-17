@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 
 const bannerSlides = [
   {
-    eventHighlights: "Dhaka Marathon 2025 – Experience the thrill of the city run.",
+    eventHighlights: "Fight Marathon 2026 – Experience the thrill of the city run.",
     imageUrl: "https://cdn.britannica.com/93/253593-138-0DD5803B/History-of-the-marathon.jpg?w=800&h=450&c=crop"
   },
   {
@@ -13,7 +13,7 @@ const bannerSlides = [
     imageUrl: "https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/ww9wvhhpniruvkhmsncv"
   },
   {
-    eventHighlights: "Challenge yourself with a 10K Run through the heart of Dhaka.",
+    eventHighlights: "Challenge yourself with a 10K Run through the heart of The Mountains.",
     imageUrl: "https://images.ctfassets.net/7ajcefednbt4/3L9DDPPSZiCIBtTaKq3L3U/a08cbaa48d19a1111a0472c8a643934c/Marathon_runners___BABAROGA.jpg?fm=webp&w=2560"
   }
 ];
