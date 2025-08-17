@@ -27,13 +27,14 @@ const Navbar = () => {
   }
 
   const handleImageClick = () => {
-    if (media) {
+    console.log("image clicked");
+    // if (media) {
       const logoutBtn = document.querySelector("#logoutBtn");
       if (logoutBtn.classList.contains("hidden")) {
         logoutBtn.classList.remove("hidden");
       } else {
         logoutBtn.classList.add("hidden");
-      }
+      // }
     }
   }
 
@@ -82,8 +83,8 @@ const Navbar = () => {
         </div>
         {user ? (
           <div className="flex gap-1 items-center mr-[2.5vw] min-[400px]:flex-row-reverse flex-col">
-            <img src={user.photoURL} onClick={handleImageClick} className="w-12 rounded-full" alt="" referrerPolicy="no-referrer" />
-            <button className="btn btn-error rounded-full font-extralight text-lg hidden" onClick={handleLogOut} id="logoutBtn">LogOut</button>
+            <img src={user.photoURL} onClick={handleImageClick} className="w-12 rounded-full hover:cursor-pointer" alt="" referrerPolicy="no-referrer" />
+            <button className="btn btn-error rounded-full font-extralight text-lg" onClick={handleLogOut} id="logoutBtn">LogOut</button>
           </div>
         ) : (
           <div className="flex sm:flex-row flex-col gap-1 items-center mr-[2.5vw]">
