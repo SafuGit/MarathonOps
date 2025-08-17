@@ -18,7 +18,6 @@ const Home = () => {
       <Carousel></Carousel>
       <HomeMarathons data={data}></HomeMarathons>
       <OurPrograms></OurPrograms>
-      <h1 className='text-5xl w-[90vw] mx-auto mb-4 mt-20'>UPCOMING MARATHONS</h1>
       <Suspense fallback={<Loading></Loading>}>
         <UpcomingMarathons dataPromise={upcomingMarathonsPromise}></UpcomingMarathons>
       </Suspense>
