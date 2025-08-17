@@ -6,7 +6,6 @@ const Hero = () => {
   return (
     <div className="hero bg-base-200 min-h-[70vh]">
       <div className="hero-content flex-col lg:flex-row-reverse gap-12">
-        {/* Images */}
         <div className="flex items-center gap-6">
           <img
             src="/assets/marathonRunnerCrop.png"
