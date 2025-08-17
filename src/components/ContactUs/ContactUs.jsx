@@ -17,10 +17,10 @@ const ContactUs = () => {
               <BiPhone className='text-2xl'></BiPhone> 
               <p className='text-lg'>+880 1981575920</p>
             </div>
-            <div className='flex gap-2 items-center'>
+            {/* <div className='flex gap-2 items-center'>
               <MdEmail className='text-2xl'></MdEmail>
               <p className='text-lg'>safwan55.ah@gmail.com</p>
-            </div>
+            </div> */}
             <div className='flex gap-2 items-center'>
               <FaLocationPin className='text-2xl'></FaLocationPin>
               <p className='text-lg'>Dhaka, Bangladesh</p>

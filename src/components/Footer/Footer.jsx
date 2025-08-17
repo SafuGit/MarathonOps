@@ -12,7 +12,7 @@ const Footer = () => {
             Connecting you with the Best Runners since 2025.
           </span>
         </p>
-        <p className='font-extralight text-md'>Copyright © {new Date().getFullYear()} SAFWAN SADID - All right reserved</p>
+        <p className='font-extralight text-md'>Copyright © {new Date().getFullYear()} MarathonOps - All right reserved</p>
       </aside>
       <div className='flex'>
         <nav className='flex gap-4 link text-gray-400'>
